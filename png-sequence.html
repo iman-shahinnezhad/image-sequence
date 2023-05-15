@@ -1,0 +1,122 @@
+<html>
+
+<head>
+
+    <title>Iman SH Sequence</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+<div id="sh-image-sequence-container" class="sh-image-sequence-container">
+
+    <div class="sh-image-sequence-content-container" >
+
+        <img src="./sequence/seq (1).png" class="animated" />
+        <img src="./sequence/seq (2).png" class="animated" />
+        <img src="./sequence/seq (3).png" class="animated" />
+        <img src="./sequence/seq (4).png" class="animated" />
+        <img src="./sequence/seq (5).png" class="animated" />
+        <img src="./sequence/seq (6).png" class="animated" />
+        <img src="./sequence/seq (7).png" class="animated" />
+        <img src="./sequence/seq (8).png" class="animated" />
+        <img src="./sequence/seq (9).png" class="animated" />
+        <img src="./sequence/seq (10).png" class="animated" />
+        <img src="./sequence/seq (11).png" class="animated" />
+        <img src="./sequence/seq (12).png" class="animated" />
+        <img src="./sequence/seq (13).png" class="animated" />
+        <img src="./sequence/seq (14).png" class="animated" />
+        <img src="./sequence/seq (15).png" class="animated" />
+        <img src="./sequence/seq (16).png" class="animated" />
+        <img src="./sequence/seq (17).png" class="animated" />
+        <img src="./sequence/seq (18).png" class="animated" />
+        <img src="./sequence/seq (19).png" class="animated" />
+        <img src="./sequence/seq (20).png" class="animated" />
+        <img src="./sequence/seq (21).png" class="animated" />
+        <img src="./sequence/seq (22).png" class="animated" />
+        <img src="./sequence/seq (23).png" class="animated" />
+        <img src="./sequence/seq (24).png" class="animated" />
+        <img src="./sequence/seq (25).png" class="animated" />
+
+    </div>
+
+</div>
+
+</body>
+
+<style>
+
+    .sh-image-sequence-container {
+        position: relative;
+        top: 0;
+        max-width: 80%;
+    }
+    .sh-image-sequence-content-container {
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .sh-image-sequence-placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sh-image-sequence-container.show .sh-image-sequence-content-container {
+        display: flex;
+        position: absolute;
+        top: 0;
+    }
+    .sh-image-sequence-container.show .sh-image-sequence-placeholder{
+        opacity: 0;
+    }
+
+    .sh-image-sequence-content-container img, .sh-image-sequence-placeholder img{
+        max-width: 100%;
+        display: none;
+        top: 0;
+        left: 0;
+        height: auto;
+    }
+    .sh-image-sequence-placeholder img{
+        display: flex;
+    }
+</style>
+
+
+<script>
+
+    jQuery(document).ready(function ($) {
+
+        $('.sh-image-sequence-container ').addClass('show');
+
+         var count = 1;
+
+        setInterval(function () {
+
+            if (count == 24 ){
+
+                count = 0;
+
+            }else{
+
+                count++;
+            }
+
+            $("#sh-image-sequence-container .sh-image-sequence-content-container img").hide();
+
+            $("#sh-image-sequence-container .sh-image-sequence-content-container img").eq(count).show();
+
+        }, 100);
+
+    });
+
+</script>
+
+</html>
